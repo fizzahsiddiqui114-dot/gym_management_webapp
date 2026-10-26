@@ -19,6 +19,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        if ($this->app->environment('production') || isset($_SERVER['HTTP_X_FORWARDED_PROTO']) || env('VERCEL')) {
+            \Illuminate\Support\Facades\URL::forceScheme('https');
+        }
+
         \Illuminate\Support\Facades\Gate::policy(
             \App\Models\PaymentSubmission::class,
             \App\Policies\PaymentSubmissionPolicy::class

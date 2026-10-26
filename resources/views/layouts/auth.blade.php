@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'Kinetic Apex') — Member & Staff Login</title>
-    <link rel="stylesheet" href="{{ asset('css/gym.css') }}">
+    <link rel="stylesheet" href="/css/gym.css?v=1.2">
     @stack('head')
 </head>
 <body style="background: var(--color-bg);">

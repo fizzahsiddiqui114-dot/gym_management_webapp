@@ -6,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'Kinetic Apex')</title>
     <meta name="description" content="@yield('meta_description', 'Kinetic Apex — Premier Athletic Facility')">
-    <link rel="stylesheet" href="{{ asset('css/gym.css') }}">
+    <link rel="stylesheet" href="/css/gym.css?v=1.2">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     @stack('head')
 </head>

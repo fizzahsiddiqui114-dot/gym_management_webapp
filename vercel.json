@@ -7,22 +7,15 @@
       "runtime": "vercel-php@0.7.3"
     }
   },
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(build|css|js|images|storage)/(.*)",
-      "dest": "/public/$1/$2"
-    },
-    {
-      "src": "/(favicon\\.ico|robots\\.txt)",
-      "dest": "/public/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/api/index.php"
+      "source": "/(.*)",
+      "destination": "/api/index.php"
     }
   ],
   "env": {
     "APP_NAME": "Kinetic Apex",
+    "ASSET_URL": "/",
     "APP_ENV": "production",
     "APP_KEY": "base64:VqQtJGQ4aNSAYTpMjYhTEtK3Ibz6z6ODsx1RqRPoZZM=",
     "APP_DEBUG": "true",
