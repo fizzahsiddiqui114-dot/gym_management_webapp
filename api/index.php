@@ -2,6 +2,7 @@
 
 // Prepare writable /tmp directories for serverless execution on Vercel
 $storageDirectories = [
+    '/tmp/storage/bootstrap/cache',
     '/tmp/storage/framework/views',
     '/tmp/storage/framework/cache/data',
     '/tmp/storage/framework/sessions',

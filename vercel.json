@@ -22,16 +22,29 @@
     }
   ],
   "env": {
+    "APP_NAME": "Kinetic Apex",
     "APP_ENV": "production",
-    "APP_DEBUG": "false",
+    "APP_KEY": "base64:VqQtJGQ4aNSAYTpMjYhTEtK3Ibz6z6ODsx1RqRPoZZM=",
+    "APP_DEBUG": "true",
+    "APP_URL": "https://gym-management-webapp-git-main-fizzahsiddiqui114-dots-projects.vercel.app",
+    "VERCEL": "1",
+    "DB_CONNECTION": "mysql",
+    "DB_HOST": "gateway01.ap-northeast-1.prod.aws.tidbcloud.com",
+    "DB_PORT": "4000",
+    "DB_DATABASE": "gym_management",
+    "DB_USERNAME": "Ph7JKRVff1nTbgV.root",
+    "DB_PASSWORD": "WXU4uuVszGwt8ZPE",
+    "MYSQL_ATTR_SSL_CA": "/etc/pki/tls/certs/ca-bundle.crt",
+    "MYSQL_ATTR_SSL_VERIFY_SERVER_CERT": "false",
+    "LARAVEL_STORAGE_PATH": "/tmp/storage",
+    "VIEW_COMPILED_PATH": "/tmp/storage/framework/views",
+    "CACHE_STORE": "array",
+    "SESSION_DRIVER": "cookie",
+    "LOG_CHANNEL": "stderr",
     "APP_CONFIG_CACHE": "/tmp/config.php",
     "APP_EVENTS_CACHE": "/tmp/events.php",
     "APP_PACKAGES_CACHE": "/tmp/packages.php",
     "APP_ROUTES_CACHE": "/tmp/routes.php",
-    "APP_SERVICES_CACHE": "/tmp/services.php",
-    "VIEW_COMPILED_PATH": "/tmp/storage/framework/views",
-    "CACHE_STORE": "database",
-    "SESSION_DRIVER": "cookie",
-    "LOG_CHANNEL": "stderr"
+    "APP_SERVICES_CACHE": "/tmp/services.php"
   }
 }

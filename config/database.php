@@ -60,7 +60,22 @@ return [
             'strict' => true,
             'engine' => null,
             'options' => extension_loaded('pdo_mysql') ? array_filter([
-                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA', file_exists('/etc/ssl/certs/ca-certificates.crt') ? '/etc/ssl/certs/ca-certificates.crt' : (file_exists('C:/xampp/apache/bin/curl-ca-bundle.crt') ? 'C:/xampp/apache/bin/curl-ca-bundle.crt' : null)),
+                PDO::MYSQL_ATTR_SSL_CA => (function () {
+                    $envCa = env('MYSQL_ATTR_SSL_CA');
+                    if ($envCa && file_exists($envCa)) {
+                        return $envCa;
+                    }
+                    foreach ([
+                        '/etc/pki/tls/certs/ca-bundle.crt',
+                        '/etc/ssl/certs/ca-certificates.crt',
+                        'C:/xampp/apache/bin/curl-ca-bundle.crt',
+                    ] as $candidate) {
+                        if (file_exists($candidate)) {
+                            return $candidate;
+                        }
+                    }
+                    return null;
+                })(),
                 PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => env('MYSQL_ATTR_SSL_VERIFY_SERVER_CERT', false),
             ], fn ($val) => !is_null($val)) : [],
         ],
